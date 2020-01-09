@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Socket</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./socket.io.dev.js"></script>
+
+</head>
+
+<body>
+    <input id="handle" hidden="true" required type="text" placeholder="Isim" value="" />
+
+    <section class="msger">
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <i class="fas fa-comment-alt"></i> Kriptoloji Chat
+            </div>
+            <div class="msger-header-options">
+            </div>
+        </header>
+
+        <main class="msger-chat" id="msger-chat">
+            <div class="left-side">
+                <h1>Users</h1>
+                <div id="users">
+
+                </div>
+            </div>
+            <div id="typer">
+
+            </div>
+        </main>
+
+        <div class="msger-inputarea">
+            <input type="text" id="message" class="msger-input" placeholder="Mesaj giriniz..."
+                style="margin-right: 10px;">
+            <input type="text" id="key" class="msger-input" placeholder="Lutfen key giriniz">
+            <select id="turu" onchange="keyOption()">
+                <option value="Sezar">Sezar Sifreleme</option>
+                <option value="Columnar">Columnar Sifreleme</option>
+                <option value="Polybuis">Polybuis Sifreleme</option>
+                <option value="Cit">Cit Sifreleme</option>
+                <option value="Vigenere">Vigenere Sifreleme</option>
+                <option value="tekmatris">Tek Matris Sifreleme</option>
+            </select>
+            <button id="send" onclick="document.getElementById('handle').disabled = true"
+                class="msger-send-btn">Send</button>
+        </div>
+    </section>
+
+    <script src='./chat.js'></script>
+</body>
+
+</html>
